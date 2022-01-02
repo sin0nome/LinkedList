@@ -285,7 +285,7 @@ namespace List{
 			return this->nullptrKUN->prev->value;
 		}
 
-		// 先頭から指定数番目のvalを取得。存在しないノードを指定した場合,型最大まで1で埋めた値を返す
+		// 末尾から指定数番目のvalを取得。存在しないノードを指定した場合nullptrを返す
 		T1* getValueSelectNodeFirst(const int nodeNum) const{
 			Node<T1*> *current = nullptrKUN->next;		// 次のノードを現在のノードとして扱う
 			T1* val = nullptrKUN->value;				// 保存用
@@ -297,15 +297,14 @@ namespace List{
 				// 前回の値(ポインタ)と同じ場合はそれ以降は存在しないので探索終了
 				// 存在しない場合は型最大までを返す
 				if(nullptrKUN == current){
-					val = nullptr;						// 初期値としてnullprtを代入
-					break;
+					return nullptr;
 				}
 				val = current->value;					// 現ノードの値を代入
 			}
 			return val;
 		}
 
-		// 末尾から指定数番目のvalを取得。存在しないノードを指定した場合,型最大まで1で埋めた値を返す
+		// 末尾から指定数番目のvalを取得。存在しないノードを指定した場合nullptrを返す
 		T1* getValueSelectNodeLast(const int nodeNum) const{
 			Node<T1*> *current = nullptrKUN->prev;		// 次のノードを現在のノードとして扱う
 			T1* val = nullptrKUN->value;				// 保存用
@@ -317,8 +316,7 @@ namespace List{
 				// 前回の値(ポインタ)と同じ場合はそれ以降は存在しないので探索終了
 				// 存在しない場合は型最大までを返す
 				if(nullptrKUN == current){
-					val = nullptr;						// 初期値としてnullprtを代入
-					break;
+					return nullptr;
 				}
 				val = current->value;					// 現ノードの値を代入
 			}
