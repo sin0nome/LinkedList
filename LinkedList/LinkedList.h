@@ -124,7 +124,7 @@ namespace List{
 
 		// 先頭から指定数番目のvalを取得。存在しないノードを指定した場合,型最大まで1で埋めた値を返す
 		T1 getValueSelectNodeFirst(const int nodeNum) const{
-			Node *current = nullptrKUN->next;		// 次のノードを現在のノードとして扱う
+			Node<T1> *current = nullptrKUN->next;		// 次のノードを現在のノードとして扱う
 			T1 val = nullptrKUN->value;				// 保存用
 			val = current->value;					// 現ノードの値を代入
 			// 指定番号のノードまで前から検索
